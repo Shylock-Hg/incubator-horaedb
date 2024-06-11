@@ -33,4 +33,7 @@ mkdir -p ${DATA_DIR}
 chmod +777 -R ${DATA_DIR}
 chown -R ${USER}.${USER} ${DATA_DIR}
 
+# start grafana server
+nohup /usr/share/grafana/bin/grafana server --homepath /usr/share/grafana/ &
+
 exec /usr/bin/horaedb-server --config ${CONFIG_FILE}
